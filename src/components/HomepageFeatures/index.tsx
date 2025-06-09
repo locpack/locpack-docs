@@ -1,54 +1,73 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import Heading from "@theme/Heading";
+import clsx from "clsx";
+import type { ReactNode } from "react";
+import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: "Project Information",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        In today's world, where technology plays a key role in everyday life, finding and sharing
+        information about places that users want to visit or have already visited is becoming an
+        increasingly important task. The project aims to solve this problem by offering a convenient
+        tool for creating and sharing collections of restaurants, hotels, attractions, and other
+        places.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: "Main Goals for MVP",
     description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
+      <ul>
+        <li>Interface design</li>
+        <li>Database architecture with users, packs, and places</li>
+        <li>API for working with the database</li>
+        <li>Interaction between the user and server parts</li>
+        <li>Docker images of the product parts</li>
+        <li>Deployment to the server</li>
+        <li>Creation of packs</li>
+        <li>Ability to share and edit packs</li>
+        <li>Ability to add places and share them</li>
+        <li>Authorization and change of account data</li>
+      </ul>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: "Links",
     description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
+      <ul>
+        <li>
+          <a href="https://github.com/locpack">Github project</a>
+        </li>
+        <li>
+          <a href="https://github.com/locpack/locpack-backend">Backend repository</a>
+        </li>
+        <li>
+          <a href="https://github.com/locpack/locpack-frontend">Frontend repository</a>
+        </li>
+        <li>
+          <a href="https://www.figma.com/design/Ea5F84bR3B9uU4NZpn3ol0/Main?node-id=0-1&t=Od5K8B5y4375MWle-1">
+            Figma
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/orgs/locpack/projects/1">Tasks</a>
+        </li>
+      </ul>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
+    <div className={clsx("col col--4")}>
+      <div className="padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
